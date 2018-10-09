@@ -70,12 +70,10 @@ RCT_REMAP_METHOD(data,
         __block NSItemProvider *textProvider = nil;
 
         [attachments enumerateObjectsUsingBlock:^(NSItemProvider *provider, NSUInteger idx, BOOL *stop) {
-            if([provider hasItemConformingToTypeIdentifier:URL_IDENTIFIER]) {
+            if ([provider hasItemConformingToTypeIdentifier:URL_IDENTIFIER]) {
                 urlProvider = provider;
-                *stop = YES;
             } else if ([provider hasItemConformingToTypeIdentifier:TEXT_IDENTIFIER]){
                 textProvider = provider;
-                *stop = YES;
             }
 //            else if ([provider hasItemConformingToTypeIdentifier:IMAGE_IDENTIFIER]){
 //                imageProvider = provider;
